@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "name": "rock-paper-scissor",
+  "description": "Rock-paper-scissors minigame",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nyyu/rock-paper-scissor.git"
+  },
+  "author": "Ny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nyyu/rock-paper-scissor/issues"
+  },
+  "homepage": "https://github.com/Nyyu/rock-paper-scissor#readme"
+}
