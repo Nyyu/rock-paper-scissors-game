@@ -19,4 +19,10 @@ A simple rock paper and scissors minigame
     <img src="public/images/preview/1286px%20width.png">
 </p>
 
+-   620px:
+
+<p align="center"> 
+    <img src="public/images/preview/620px%20width.png">
+</p>
+
 ---
