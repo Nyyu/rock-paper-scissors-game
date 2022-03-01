@@ -5,13 +5,9 @@
 -   [Summary](#sumary)
 -   [Prints](#prints)
 
----
-
 ## Summary
 
 A simple rock paper and scissors minigame
-
----
 
 ## Preview
 
@@ -22,3 +18,5 @@ A simple rock paper and scissors minigame
 <p align="center"> 
     <img src="public/images/preview/1286px%20width.png">
 </p>
+
+---
