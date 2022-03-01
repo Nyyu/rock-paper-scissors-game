@@ -1,5 +1,6 @@
 :root {
-    --bg-color: #000;
+    --bg-color: #440a67;
+    --soft-bg-color: #be8ddd;
     --txt-color: #fff;
 }
 
@@ -8,9 +9,11 @@
     font-weight: 500;
 }
 
+/* Elements */
+
 body {
-    background: #440a67;
-    color: #fff;
+    background: var(--bg-color);
+    color: var(--txt-color);
     max-height: 100vh;
     max-width: 75%;
     margin: 0 auto;
@@ -24,14 +27,14 @@ i::before {
 
     margin: 0 auto;
 
-    width: 9.375rem;
-    height: 9.375rem;
+    width: 9rem;
+    height: 9rem;
 
-    border: 2px solid white;
+    border: 3px solid #e7c2ff7c;
     border-radius: 100%;
 }
+/* 
 #mButtons div:nth-of-type(1) i::after {
-    /* 
     content: "";
     position: absolute;
     left: 145px;
@@ -42,17 +45,19 @@ i::before {
     height: 5px;
     background: #be8ddd;
     https://api.jquery.com/offset/
-    */
 }
+*/
 
 i {
-    transition: all 250ms ease;
+    /*  transition-property: color, box-shadow; */
+    transition: all 250ms ease-out;
     border-radius: 100%;
+    margin: 0 auto;
 }
 i:hover {
-    color: #be8ddd;
-    box-shadow: 0 0 15px 2px #be8ddd inset;
+    box-shadow: 0 0 15px 2px var(--soft-bg-color) inset;
 }
+
 form {
     display: flex;
     justify-content: center;
@@ -66,15 +71,43 @@ form {
 button {
     margin: 0 auto;
     background: transparent;
-    color: #fff;
+    color: var(--txt-color);
     padding: 10px 35px;
     border: 3px solid rgba(255, 255, 255, 0.425);
     border-radius: 15px;
 }
-/*  */
 
-/*  */
+/* Classes */
+.btnAnimation {
+    color: #673586;
+}
+
+/* Ids */
+#result {
+    /* visibility: hidden;  */
+    position: absolute;
+    margin: 0 auto;
+
+    max-width: 26rem;
+    height: 4.5rem;
+
+    border: 3.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+
+    bottom: calc(50vh * 0.5);
+    right: 0;
+    left: 0;
+
+    font-size: 1.3rem;
+
+    display: grid;
+    place-content: center;
+}
+
 #title {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 15px;
     border: 3px solid rgba(255, 255, 255, 0.425);
     border-radius: 15px;
@@ -91,10 +124,17 @@ button {
 #mButtons {
     text-align: center;
     margin-top: 6.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mButtons div {
+    padding-left: 0;
 }
 
 #mButtons :nth-child(1) i {
-    transform: rotate(-20deg);
+    transform: rotate(10deg);
 }
 
 #mButtons :nth-child(2) i {
@@ -111,8 +151,8 @@ button {
     text-align: center;
 }
 #score span {
-    background: #fff;
-    color: #be8ddd;
+    background: var(--txt-color);
+    color: var(--soft-bg-color);
     font-weight: lighter;
     width: 100px;
     min-height: 85px;
@@ -125,3 +165,37 @@ button {
     color: rgb(121, 106, 128);
     font-size: 2.5rem;
 }
+
+/* Animation */
+@keyframes blink {
+    0% {
+        opacity: 100%;
+    }
+    10% {
+        opacity: 10%;
+    }
+    25% {
+        opacity: 75%;
+    }
+    50% {
+        opacity: 10%;
+    }
+    75% {
+        opacity: 75%;
+    }
+    90% {
+        opacity: 25%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+/* Media Query */
+
+/* 
+    Width: 410px -> working properly, lower than that = button {border} overlap
+    
+    I could add media query but i already set the max-width on a few things and
+    I'm gettin' kinda sleepy already
+*/
