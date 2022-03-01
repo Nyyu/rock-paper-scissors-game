@@ -7,7 +7,7 @@
 
 ## Summary
 
-A simple rock paper and scissors minigame
+A simple rock paper and scissors minigame ``` not finished yet! ```
 
 ## Preview
 
