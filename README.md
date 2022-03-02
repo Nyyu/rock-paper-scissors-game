@@ -19,7 +19,7 @@ A simple rock paper and scissors minigame ``` not finished yet! ```
     one host w hours left at the end of this year xD 
 ```
 
-### Prints ``` Old ```
+### Prints
 
 -   ~1250px:
 
