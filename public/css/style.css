@@ -10,11 +10,15 @@
 }
 
 /* Elements */
+html,
+body {
+    overflow: hidden;
+}
 body {
     background: var(--bg-color);
     color: var(--txt-color);
     max-height: 100vh;
-    max-width: 75%;
+    max-width: 75vw;
     margin: 0 auto;
 }
 
@@ -76,6 +80,28 @@ button {
 }
 
 /* Classes */
+.blur {
+    position: absolute;
+
+    width: 45rem;
+    height: 45rem;
+
+    z-index: -1;
+    border-radius: 100%;
+    filter: blur(250px);
+}
+
+.b1 {
+    background: #3a3497;
+    top: -250px;
+    left: -200px;
+}
+.b2 {
+    background: #943678;
+    right: -200px;
+    bottom: -250px;
+}
+
 .btnAnimation {
     color: #673586;
 }
