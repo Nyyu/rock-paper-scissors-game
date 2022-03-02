@@ -13,7 +13,7 @@ A simple rock paper and scissors minigame ``` not finished yet! ```
 
 ### Live
 
-- [Link](https://hidden-earth-17090.herokuapp.com)
+- [Link](https://ny-rts-minigame.herokuapp.com)
 
 ### Prints
 
