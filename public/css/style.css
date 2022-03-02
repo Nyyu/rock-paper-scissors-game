@@ -10,7 +10,6 @@
 }
 
 /* Elements */
-
 body {
     background: var(--bg-color);
     color: var(--txt-color);
@@ -19,20 +18,6 @@ body {
     margin: 0 auto;
 }
 
-i::before {
-    content: "";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin: 0 auto;
-
-    width: 9rem;
-    height: 9rem;
-
-    border: 3px solid #e7c2ff7c;
-    border-radius: 100%;
-}
 /* 
 #mButtons div:nth-of-type(1) i::after {
     content: "";
@@ -49,13 +34,26 @@ i::before {
 */
 
 i {
-    /*  transition-property: color, box-shadow; */
     transition: all 250ms ease-out;
     border-radius: 100%;
     margin: 0 auto;
 }
 i:hover {
     box-shadow: 0 0 15px 2px var(--soft-bg-color) inset;
+}
+i::before {
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+
+    width: 9rem;
+    height: 9rem;
+
+    border: 3px solid #e7c2ff7c;
+    border-radius: 100%;
 }
 
 form {
@@ -81,6 +79,11 @@ button {
 .btnAnimation {
     color: #673586;
 }
+.btnFade {
+    color: #863535; /* Enemy's color */
+
+    animation: blink 3.5s;
+}
 
 /* Ids */
 #result {
@@ -88,13 +91,13 @@ button {
     position: absolute;
     margin: 0 auto;
 
-    max-width: 26rem;
+    max-width: 16rem;
     height: 4.5rem;
 
     border: 3.5px solid rgba(255, 255, 255, 0.5);
     border-radius: 25px;
 
-    bottom: calc(50vh * 0.5);
+    bottom: calc(50vh * 0.35);
     right: 0;
     left: 0;
 
@@ -102,6 +105,25 @@ button {
 
     display: grid;
     place-content: center;
+}
+
+#warning-layer {
+    z-index: 100;
+    margin: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    min-width: 100vw;
+    min-height: 100vh;
+
+    background: rgb(255, 76, 76, 0.25);
+
+    display: grid;
+    place-items: center;
 }
 
 #title {
@@ -132,15 +154,12 @@ button {
 #mButtons div {
     padding-left: 0;
 }
-
 #mButtons :nth-child(1) i {
     transform: rotate(10deg);
 }
-
 #mButtons :nth-child(2) i {
     transform: rotate(10deg);
 }
-
 #mButtons :nth-child(3) i {
     transform: rotate(65deg);
 }
@@ -158,7 +177,6 @@ button {
     min-height: 85px;
     border-radius: 5px;
 }
-
 #score span div {
     font-weight: bolder;
     margin-top: 10px;
@@ -171,20 +189,14 @@ button {
     0% {
         opacity: 100%;
     }
-    10% {
-        opacity: 10%;
-    }
     25% {
-        opacity: 75%;
+        opacity: 15%;
     }
     50% {
-        opacity: 10%;
-    }
-    75% {
         opacity: 75%;
     }
-    90% {
-        opacity: 25%;
+    75% {
+        opacity: 15%;
     }
     100% {
         opacity: 100%;

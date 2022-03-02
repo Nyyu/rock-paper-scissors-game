@@ -1,16 +1,43 @@
 const btn = $("#mButtons div i");
 const score = $("#score span div");
 const rDiv = $("#result");
-let points = 0;
+const wDiv = $("#warning-layer");
+var points = 0;
+var timeout = true;
+var cTime = 0;
 
 rDiv.fadeOut(0);
-btn.on("click", function () {
-    result($(this).parent().attr("id"), btnRandom(rNumber(3)));
+wDiv.fadeOut(0);
 
-    $(this).parent().addClass("btnAnimation");
-    setTimeout(() => {
-        $(this).parent().removeClass("btnAnimation");
-    }, 1500);
+btn.on("click", function () {
+    if (timeout) {
+        let bot = btnRandom(rNumber(3));
+        result($(this).parent().attr("id"), bot);
+
+        $(this).parent().addClass("btnAnimation");
+        setTimeout(() => {
+            $(this).parent().removeClass("btnAnimation");
+        }, 1500);
+
+        setTimeout(() => {
+            $("#" + bot).addClass("btnFade");
+        }, 200);
+        setTimeout(() => {
+            $("#" + bot).removeClass("btnFade");
+        }, 1500);
+
+        cTime = 1;
+        timeout = false;
+    } else if (timeout === false) {
+        if (cTime === 1) {
+            setTimeout(() => {
+                timeout = true;
+            }, 1500);
+        }
+
+        // rWarning();
+        cTime = 0;
+    }
 });
 
 // Comparing
@@ -20,32 +47,32 @@ function result(p1, p2) {
     let rText;
 
     // Draw
-    if (btn1 === btn2) rText = `DRAW`;
+    if (btn1 === btn2) rText = "DRAW";
 
     // The rest of it
     if (btn1 === "paper" && btn2 === "rock") {
-        rText = `P1 WON`;
+        rText = "P1 WON";
         addScore();
     } else if (btn2 === "paper" && btn1 === "rock") {
-        rText = `BOT WON`;
+        rText = "BOT WON";
     }
 
     if (btn1 === "scissor" && btn2 === "paper") {
-        rText = `P1 WON`;
+        rText = "P1 WON";
         addScore();
     } else if (btn2 === "scissor" && btn1 === "paper") {
-        rText = `BOT WON`;
+        rText = "BOT WON";
     }
 
     if (btn1 === "rock" && btn2 === "scissor") {
-        rText = `P1 WON`;
+        rText = "P1 WON";
         addScore();
     } else if (btn2 === "rock" && btn1 === "scissor") {
-        rText = `BOT WON`;
+        rText = "BOT WON";
     }
 
     // Tracking values
-    setTab(rText + ` (P1: ${btn1}, BOT: ${btn2})`);
+    setTab(rText);
 }
 
 // Tabs
@@ -58,8 +85,8 @@ function setTab(text) {
     rDiv.html(text.toUpperCase());
     rDiv.fadeIn(300);
     setTimeout(() => {
-        rDiv.fadeOut(600);
-    }, 5500);
+        rDiv.fadeOut(300);
+    }, 1500);
 }
 
 // [bot]
@@ -79,15 +106,13 @@ function btnRandom(value) {
 }
 
 // Others
-/*
-function sleep(delay) {
-    const time = Date.now();
-    let cTime = undefined;
-    do {
-        cTime = Date.now();
-    } while (time + delay > cTime);
-    console.log("W-what happend? I fell asleep for [" + delay + "s]");
-} */
+function rWarning() {
+    wDiv.fadeIn(0).fadeOut(400);
+    wDiv.html("WAIT A FEW SECONDS.");
+    setTimeout(() => {
+        wDiv.html("");
+    }, 300);
+}
 
 // Random number
 function rNumber(limit) {
