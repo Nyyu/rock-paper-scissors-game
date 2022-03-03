@@ -13,11 +13,7 @@ A simple rock paper and scissors minigame ``` not finished yet! ```
 
 ### Live
 
-- [Link](https://ny-rts-minigame.herokuapp.com) 
-``` 
-    At some point imma remove it cuz I need at least 
-    one host w hours left at the end of this year xD 
-```
+- [Link](https://ny-rts-minigame.herokuapp.com) ``` [Down], code still here doe so no biggie ```
 
 ### Prints
 
